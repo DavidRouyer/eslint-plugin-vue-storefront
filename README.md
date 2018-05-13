@@ -37,7 +37,9 @@ Then configure the rules you want to use under the rules section.
 {
     "rules": {
         "vue-storefront/no-corecomponent-import": "error",
-        "vue-storefront/no-corecomponent": "error"
+        "vue-storefront/no-corecomponent": "error",
+        "vue-storefront/no-corepage-import": "error",
+        "vue-storefront/no-corepage": "error"
     }
 }
 ```
@@ -46,7 +48,8 @@ Then configure the rules you want to use under the rules section.
 
 * no-corecomponent-import
 * no-corecomponent
-
+* no-corepage-import
+* no-corepage
 
 
 
