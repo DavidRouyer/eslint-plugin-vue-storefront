@@ -14,14 +14,14 @@ var ruleTester = new RuleTester();
 ruleTester.run('no-corepage-import', rule, {
 
     valid: [
-      `import Overlay from 'core/components/Overlay'`
+      `import Category from 'core/pages/Category'`
     ],
 
     invalid: [
       {
           code: `import { corePage } from 'core/lib/themes'`,
           errors: [{
-            message: `The corePage() method has been removed. Import the component as you usually do. Example: import Overlay from 'core/components/Overlay'`,
+            message: `The corePage() method has been removed. Import the component as you usually do. Example: import Category from 'core/pages/Category'`,
             type: 'ImportDeclaration'
           }]
       },
@@ -34,21 +34,21 @@ ruleTester.run('no-corepage-import', rule, {
             close () {
             }
           },
-          mixins: [corePage('Overlay')]
+          mixins: [corePage('Category')]
         }`,
         errors: [{
-          message: `The corePage() method has been removed. Import the component as you usually do. Example: import Overlay from 'core/components/Overlay'`,
+          message: `The corePage() method has been removed. Import the component as you usually do. Example: import Category from 'core/pages/Category'`,
           type: 'ImportDeclaration'
         }],
         output: `
-        import Overlay from 'core/components/Overlay'
+        import Category from 'core/pages/Category'
 
         export default {
           methods: {
             close () {
             }
           },
-          mixins: [corePage('Overlay')]
+          mixins: [corePage('Category')]
         }`
       },
       {
@@ -63,11 +63,11 @@ ruleTester.run('no-corepage-import', rule, {
           mixins: [corePage('blocks/SearchPanel/SearchPanel')]
         }`,
         errors: [{
-          message: `The corePage() method has been removed. Import the component as you usually do. Example: import Overlay from 'core/components/Overlay'`,
+          message: `The corePage() method has been removed. Import the component as you usually do. Example: import Category from 'core/pages/Category'`,
           type: 'ImportDeclaration'
         }],
         output: `
-        import SearchPanel from 'core/components/blocks/SearchPanel/SearchPanel'
+        import SearchPanel from 'core/pages/blocks/SearchPanel/SearchPanel'
         import ProductTile from 'theme/components/core/ProductTile'
 
         export default {
