@@ -19,6 +19,13 @@ ruleTester.run('no-corecomponent-import', rule, {
 
     invalid: [
       {
+        code: `import coreComponent from 'core/lib/themes'`,
+        errors: [{
+          message: `The coreComponent() method has been removed. Import the component as you usually do. Example: import Overlay from 'core/components/Overlay'`,
+          type: 'ImportDeclaration'
+        }]
+      },
+      {
           code: `import { coreComponent } from 'core/lib/themes'`,
           errors: [{
             message: `The coreComponent() method has been removed. Import the component as you usually do. Example: import Overlay from 'core/components/Overlay'`,

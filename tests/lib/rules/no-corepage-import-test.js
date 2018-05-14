@@ -19,6 +19,13 @@ ruleTester.run('no-corepage-import', rule, {
 
     invalid: [
       {
+        code: `import corePage from 'core/lib/themes'`,
+        errors: [{
+          message: `The corePage() method has been removed. Import the component as you usually do. Example: import Category from 'core/pages/Category'`,
+          type: 'ImportDeclaration'
+        }]
+      },
+      {
           code: `import { corePage } from 'core/lib/themes'`,
           errors: [{
             message: `The corePage() method has been removed. Import the component as you usually do. Example: import Category from 'core/pages/Category'`,
